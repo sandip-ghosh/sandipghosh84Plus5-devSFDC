@@ -6,6 +6,8 @@ on:
 jobs:
   test_something:
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./sandipghosh84-5-DEV-SFDC-Project/src/pages/
     # Runs a single command using the runners shell
     steps:
     - uses: actions/checkout@v1
