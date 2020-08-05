@@ -11,9 +11,9 @@ jobs:
     # Runs a single command using the runners shell
     steps:
     - run: | 
-        cd sandipghosh84-5-DEV-SFDC-Project/src/pages/
         echo -current path--
         pwd
+        ls -lrt
     - uses: actions/checkout@v1
     - uses: LouisBrunner/diff-action@v0.1.0
       #find current working directory
