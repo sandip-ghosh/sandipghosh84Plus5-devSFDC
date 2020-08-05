@@ -12,7 +12,9 @@ jobs:
     steps:
     - run: | 
         echo $GITHUB_REPOSITORY
-        ls -la >> output.txt
+        cd $GITHUB_REPOSITORY
+        ls -la
+        echo $GITHUB_WORKSPACE
         cd ${{github.workspace}}
         echo -current path--
         pwd
