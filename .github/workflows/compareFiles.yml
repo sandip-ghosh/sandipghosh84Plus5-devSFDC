@@ -12,7 +12,7 @@ jobs:
     steps:
     - run: | 
         echo $GITHUB_REPOSITORY
-        cd /home/runner/work/_temp/
+        cd /home/runner/work/
         ls -la
         echo $GITHUB_WORKSPACE
         cd ${{github.workspace}}
