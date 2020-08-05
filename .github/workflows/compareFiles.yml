@@ -12,8 +12,7 @@ jobs:
     steps:
     - run: | 
         echo $GITHUB_REPOSITORY
-        ls -la
-        cd sandipghosh84-5-DEV-SFDC-Project
+        ls -la >> output.txt
         cd ${{github.workspace}}
         echo -current path--
         pwd
