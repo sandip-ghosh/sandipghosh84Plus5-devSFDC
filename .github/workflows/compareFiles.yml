@@ -23,7 +23,8 @@ jobs:
         ls -lrt
         python --version
         #diff -c helloWorld.page helloWorld_1.page >> output.txt
-        git diff --no-index -- helloWorld.page helloWorld_1.page > ./a-b.diff || true
+        git diff --no-index -- helloWorld.page helloWorld_1.page > ./output.txt || true
+        echo output.txt
         #git commit output.txt
 
         
