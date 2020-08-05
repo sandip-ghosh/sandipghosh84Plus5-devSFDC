@@ -11,7 +11,7 @@ jobs:
     # Runs a single command using the runners shell
     steps:
     - run: | 
-        cd /home/
+        git sandip-ghosh-patch-1
         echo -current path--
         pwd
         ls -lrt
