@@ -11,6 +11,7 @@ jobs:
     # Runs a single command using the runners shell
     steps:
     - run: | 
+        cd ..
         echo -current path--
         pwd
         ls -lrt
