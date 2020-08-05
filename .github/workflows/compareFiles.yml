@@ -11,7 +11,7 @@ jobs:
     # Runs a single command using the runners shell
     steps:
     - run: | 
-        echo GIT_DIR
+        echo $GITHUB_WORKSPACE
         cd ${{github.workspace}}
         echo -current path--
         pwd
