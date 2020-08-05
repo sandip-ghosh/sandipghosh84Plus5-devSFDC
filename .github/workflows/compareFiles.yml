@@ -22,6 +22,9 @@ jobs:
         cd sandipghosh84-5-DEV-SFDC-Project/src/pages/
         ls -lrt
         python --version
-        diff -c helloWorld.page helloWorld_1.page >> output.txt
-        git commit output.txt
+        #diff -c helloWorld.page helloWorld_1.page >> output.txt
+        git diff --no-index -- helloWorld.page helloWorld_1.page
+        #> ./a-b.diff || true
+        #git commit output.txt
+
         
