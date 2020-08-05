@@ -1,33 +1,17 @@
 # This is a basic workflow to help you get started with Actions
+name: "build-test"
+on: 
+  [push]
 
-name: CI
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  test_something:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
-
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!
-
-    # Compare two files
-    run : echo comparing two files -- start
-    - name: Get Diff Action
-    uses: technote-space/get-diff-action@v1.2.8
-    run : echo comparing two files -- end
+    - uses: actions/checkout@v1
+    - uses: LouisBrunner/diff-action@v0.1.0
+      with:
+        old: sandipghosh84Plus5-devSFDC/sandipghosh84-5-DEV-SFDC-Project/src/pages/helloWorld.page
+        new: sandipghosh84Plus5-devSFDC/sandipghosh84-5-DEV-SFDC-Project/src/pages/helloWorld_1.page
+        mode: addition
+        tolerance: mixed
+        output: sandipghosh84Plus5-devSFDC/sandipghosh84-5-DEV-SFDC-Project/src/pages/out.txt
