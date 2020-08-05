@@ -11,7 +11,7 @@ jobs:
     # Runs a single command using the runners shell
     steps:
     - run: | 
-        cd ..
+        cd /home/git/repositories
         echo -current path--
         pwd
         ls -lrt
