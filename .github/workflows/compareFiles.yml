@@ -22,5 +22,5 @@ jobs:
         cd sandipghosh84-5-DEV-SFDC-Project/src/pages/
         ls -lrt
         python --version
-        #diff helloWorld.page helloWorld_1.page >> output.txt
+        diff -c helloWorld.page helloWorld_1.page
         
