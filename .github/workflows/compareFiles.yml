@@ -11,6 +11,7 @@ jobs:
     # Runs a single command using the runners shell
     steps:
     - run: | 
+        cd sandipghosh84-5-DEV-SFDC-Project/src/pages/
         echo -current path--
         pwd
     - uses: actions/checkout@v1
