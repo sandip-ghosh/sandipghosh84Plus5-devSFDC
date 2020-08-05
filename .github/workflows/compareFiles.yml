@@ -24,7 +24,7 @@ jobs:
         python --version
         #diff -c helloWorld.page helloWorld_1.page >> output.txt
         git diff --no-index -- helloWorld.page helloWorld_1.page > ./output.txt || true
-        echo output.txt
+        cat output.txt
         #git commit output.txt
 
         
