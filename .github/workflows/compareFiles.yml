@@ -6,12 +6,15 @@ on:
 jobs:
   test_something:
     runs-on: ubuntu-latest
-    env:
-      working-directory: ../../sandipghosh84-5-DEV-SFDC-Project/src/pages/
+    #env:
+      #working-directory: ../../sandipghosh84-5-DEV-SFDC-Project/src/pages/
     # Runs a single command using the runners shell
     steps:
+    - run: | 
+        echo pwd
     - uses: actions/checkout@v1
     - uses: LouisBrunner/diff-action@v0.1.0
+      #find current working directory
       with:
         old: helloWorld.page
         new: helloWorld_1.page
