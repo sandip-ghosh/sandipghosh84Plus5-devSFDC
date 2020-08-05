@@ -22,3 +22,4 @@ jobs:
         cd sandipghosh84-5-DEV-SFDC-Project/src/pages/
         ls -lrt
         diff helloWorld.page helloWorld_1.page
+        quit
