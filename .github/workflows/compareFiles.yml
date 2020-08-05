@@ -11,7 +11,8 @@ jobs:
     # Runs a single command using the runners shell
     steps:
     - run: | 
-        echo pwd
+        echo -current path--
+        pwd
     - uses: actions/checkout@v1
     - uses: LouisBrunner/diff-action@v0.1.0
       #find current working directory
