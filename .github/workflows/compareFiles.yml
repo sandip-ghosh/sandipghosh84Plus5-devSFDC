@@ -32,7 +32,7 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 465
-          username: neeelanjana@gmail.com
+          username: neeelanjana
           password: mulo1234
           subject: A new git push happened!
           # Literal body:
