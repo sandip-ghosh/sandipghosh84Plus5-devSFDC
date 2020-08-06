@@ -23,7 +23,8 @@ jobs:
         ls -lrt
         python --version
         #diff -c helloWorld.page helloWorld_1.page >> output.txt
-        git diff --no-index -- helloWorld.page helloWorld_1.page > ./output.txt || true
+        #git diff --no-index -- helloWorld.page helloWorld_1.page > ./output.txt || true
+        git diff --no-index -- dir1/OLC_Details.dvm dir2/OLC_Details_updated.dvm > ./output.txt || true
         cat output.txt
         #sendmail sandipghosh84@gmail.com  < output.txt
         #git commit output.txt
