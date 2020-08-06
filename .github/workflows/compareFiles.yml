@@ -27,6 +27,7 @@ jobs:
         #git diff --no-index -- helloWorld.page helloWorld_1.page > ./output.txt || true
         git diff --no-index -- dir1/OLC_Details.dvm dir2/OLC_Details_updated.dvm > ./output.txt || true
         cat output.txt
+        cp output.txt /home/runner/work/.
         
         # Steps represent a sequence of tasks that will be executed as part of the job
         # steps:
@@ -40,7 +41,7 @@ jobs:
         password: mulo1234
         subject: Github Actions job result
         # Literal body:
-        body: Build job of ${{github.repository}} completed successfully!
+        body: Build job of ${{github.repository}} completed successfully!!
         to: sandipghosh84@gmail.com
         from: Sarmistha
         # Optional content type (defaults to text/plain):
