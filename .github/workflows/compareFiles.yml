@@ -22,38 +22,28 @@ jobs:
         cd sandipghosh84-5-DEV-SFDC-Project/src/pages/
         ls -lrt
         python --version
-        #diff -c helloWorld.page helloWorld_1.page >> output.txt
         #git diff --no-index -- helloWorld.page helloWorld_1.page > ./output.txt || true
         git diff --no-index -- dir1/OLC_Details.dvm dir2/OLC_Details_updated.dvm > ./output.txt || true
         cat output.txt
         
-        - name: Send mail
-        uses: dawidd6/action-send-mail@v2
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: neeelanjana
-          password: mulo1234
-          subject: A new git push happened!
-          # Literal body:
-          body: There are some changes(s) detected
-          # Read file contents as body:
-          #body: file://README.md
-          to: sandipghosh84@gmail.com
-          from: Wifyyyy
-          # Optional content type (defaults to text/plain):
-          content_type: text/html
-          # Optional attachments:
-          #attachments: output.txt
-        
-        
-        #- name: Send Push Notification
-        #uses: techulus/push-github-action@1.0.0
-        #env:
-        #API_KEY: 80cf7cd6-2427-4fdf-b84b-d0a46a64151a
-        #MESSAGE: "There is a new commit!"
-        
-        #sendmail sandipghosh84@gmail.com  < output.txt
-        #git commit output.txt
 
+        # Steps represent a sequence of tasks that will be executed as part of the job
+        steps:
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - name: Send mail
+          uses: dawidd6/action-send-mail@v2
+          with:
+            server_address: smtp.gmail.com
+            server_port: 465
+            username: neeelanjana
+            password: mulo1234
+            subject: Github Actions job result
+            # Literal body:
+            body: Build job of ${{github.repository}} completed successfully!
+            to: sandipghosh84@gmail.com
+            from: Sarmistha
+            # Optional content type (defaults to text/plain):
+            content_type: text/html
+            # Optional attachments:
+            #attachments: attachments.zip,git.diff,./dist/static/main.js
         
