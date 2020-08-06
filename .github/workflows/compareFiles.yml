@@ -26,24 +26,22 @@ jobs:
         git diff --no-index -- dir1/OLC_Details.dvm dir2/OLC_Details_updated.dvm > ./output.txt || true
         cat output.txt
         
-
         # Steps represent a sequence of tasks that will be executed as part of the job
         # steps:
         # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-        - name: Send mail
-          uses: dawidd6/action-send-mail@v2
-          with:
-            server_address: smtp.gmail.com
-            server_port: 465
-            username: neeelanjana
-            password: mulo1234
-            subject: Github Actions job result
-            # Literal body:
-            body: Build job of ${{github.repository}} completed successfully!
-            to: sandipghosh84@gmail.com
-            from: Sarmistha
-            # Optional content type (defaults to text/plain):
-            content_type: text/html
-            # Optional attachments:
-            #attachments: attachments.zip,git.diff,./dist/static/main.js
-        
+    - name: Send mail
+      uses: dawidd6/action-send-mail@v2
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: neeelanjana
+        password: mulo1234
+        subject: Github Actions job result
+        # Literal body:
+        body: Build job of ${{github.repository}} completed successfully!
+        to: sandipghosh84@gmail.com
+        from: Sarmistha
+        # Optional content type (defaults to text/plain):
+        content_type: text/html
+        # Optional attachments:
+        #attachments: attachments.zip,git.diff,./dist/static/main.js
