@@ -21,7 +21,7 @@ for fn in dir2/*.dvm; do
                         echo $fn
                         #diff --context=1 "$file" "dir2/$fn" >> output.txt
                         if ! cmp $file $fn >/dev/null 2>&1
-                        #then
+                        then
                          #       echo $file and $fn are same
                         #else
                                 diff --context=1 "$file" "$fn" >> output.txt
