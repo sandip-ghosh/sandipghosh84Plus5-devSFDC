@@ -3,8 +3,8 @@ pwd
 cd dir2
 fn=$(ls -t | head -n1)
 echo $fn
-pwd
 cd..
-for file in dir2/*.dvm; do
-        diff "$file" "dir1/${fn##*/}" >> output.txt
+pwd
+for file in dir1/*.dvm; do
+        diff "$file" "dir2/${fn##*/}" >> output.txt
 done
