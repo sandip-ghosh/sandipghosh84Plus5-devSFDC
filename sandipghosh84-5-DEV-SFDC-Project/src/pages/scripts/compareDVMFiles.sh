@@ -26,3 +26,4 @@ for fn in dir2/*.dvm; do
 done
 if test -f output.txt; then
         cat output.txt
+fi
