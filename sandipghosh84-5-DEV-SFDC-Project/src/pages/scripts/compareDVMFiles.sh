@@ -8,7 +8,7 @@
 #echo 2-current directory 
 #pwd
 for fn in dir2/*.dvm; do
-        for file in dir1/*.dvm; do
+        for file in ../dir1/*.dvm; do
                 #echo $file
                 #diff --context=1 "$file" "dir2/${fn##*/}" >> output.txt
                 filestr1=`basename $file`
