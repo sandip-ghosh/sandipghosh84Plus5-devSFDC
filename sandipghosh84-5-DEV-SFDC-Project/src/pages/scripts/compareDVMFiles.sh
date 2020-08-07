@@ -24,4 +24,5 @@ for fn in dir2/*.dvm; do
                 fi
           done
 done
-cat output.txt
+if test -f output.txt; then
+        cat output.txt
