@@ -14,4 +14,4 @@ for file in dir1/*.dvm; do
                 diff --context=1 "$file" "dir2/$fn" >> output.txt
         fi
 done
-cat output.txt
+#cat output.txt
