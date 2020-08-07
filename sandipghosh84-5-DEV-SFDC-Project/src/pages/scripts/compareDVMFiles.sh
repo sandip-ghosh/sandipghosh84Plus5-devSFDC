@@ -12,8 +12,8 @@ for file in dir1/*.dvm; do
         #diff --context=1 "$file" "dir2/${fn##*/}" >> output.txt
         filestr1=`basename $file`
         filestr2=`basename $fn`
-        echo filestr1
-        echo filestr2
+        #echo filestr1
+        #echo filestr2
         #if [[ "$file" == "$fn" ]]; then
         #if [[ $file = $fn ]]; then
         if [[ "$filestr1" == "$filestr2" ]]; then
@@ -21,4 +21,4 @@ for file in dir1/*.dvm; do
                 diff --context=1 "$file" "dir2/$fn" >> output.txt
         fi
 done
-#cat output.txt
+cat output.txt
