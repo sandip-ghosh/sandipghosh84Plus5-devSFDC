@@ -22,7 +22,7 @@ jobs:
         #echo -2. current path--
         pwd
         cd sandipghosh84-5-DEV-SFDC-Project/src/pages/
-        chmod u=rwx compareDVMFiles.sh
+        chmod u=rwx scripts/compareDVMFiles.sh
         ./scripts/compareDVMFiles.sh
         #ls -lrt
         #python --version
