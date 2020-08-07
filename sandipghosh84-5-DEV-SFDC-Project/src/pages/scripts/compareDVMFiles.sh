@@ -2,7 +2,7 @@
 pwd
 cd dir2
 fn=$(ls -t | head -n1)
-echo $fn
+echo last committed file --> $fn
 cd ..
 pwd
 for file in dir1/*.dvm; do
