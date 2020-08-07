@@ -6,5 +6,7 @@ echo $fn
 cd ..
 pwd
 for file in dir1/*.dvm; do
+        echo $file
         diff "$file" "dir2/${fn##*/}" >> output.txt
+        cat output.txt
 done
