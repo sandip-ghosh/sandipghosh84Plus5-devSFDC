@@ -10,11 +10,7 @@ pwd
 for file in dir1/*.dvm; do
         #echo $file
         #diff --context=1 "$file" "dir2/${fn##*/}" >> output.txt
-        #if [[ $file == $fn ]]; then
-        cmp $file $fn > newfile
-        x=` wc newfile | cut -d" " -f2 `
-        if [` $x -eq 0 `]
-        then
+        if [[ "$file" == "$fn" ]]; then
                 echo $fn
                 diff --context=1 "$file" "dir2/$fn" >> output.txt
         fi
