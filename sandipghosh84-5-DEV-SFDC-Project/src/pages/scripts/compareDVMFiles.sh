@@ -1,0 +1,34 @@
+#compare files in two directories
+#echo 1-current directory 
+#pwd
+#cd dir2
+#fn=$(ls -t | head -n1)
+#echo $fn
+#cd ..
+#echo 2-current directory 
+#pwd
+for fn in dir2/*.dvm; do
+        for file in ../dir1/*.dvm; do
+                #echo $file
+                #diff --context=1 "$file" "dir2/${fn##*/}" >> output.txt
+                filestr1=`basename $file`
+                filestr2=`basename $fn`
+                #echo filestr1
+                #echo filestr2
+                #if [[ "$file" == "$fn" ]]; then
+                #if [[ $file = $fn ]]; then
+                if [[ "$filestr1" == "$filestr2" ]]; then
+                        #diff --context=1 "$file" "dir2/$fn" >> output.txt
+                        if ! cmp $file $fn >/dev/null 2>&1
+                        then
+                         #       echo $file and $fn are same
+                        #else
+                                diff --context=1 "$file" "$fn" >> output.txt
+                        fi
+                        
+                fi
+          done
+done
+if test -f output.txt; then
+        cat output.txt
+fi

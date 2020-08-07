@@ -1,0 +1,50 @@
+# This is a basic workflow to help you get started with Actions
+name: "build-test"
+on: 
+  [push]
+
+jobs:
+  test_something:
+    runs-on: ubuntu-latest
+    #env:
+    #working-directory: ../../sandipghosh84-5-DEV-SFDC-Project/src/pages/
+    # Runs a single command using the runners shell
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    - uses: actions/checkout@v2
+    - run: | 
+        echo -1. current path--
+        pwd
+        #echo $GITHUB_REPOSITORY
+        #cd /home/runner/work/
+        #echo $GITHUB_WORKSPACE
+        cd ${{github.workspace}}
+        #echo -2. current path--
+        pwd
+        cd sandipghosh84-5-DEV-SFDC-Project/src/pages/
+        ls -lrt
+        python --version
+        #git diff --no-index -- helloWorld.page helloWorld_1.page > ./output.txt || true
+        git diff --no-index -- dir1/OLC_Details.dvm dir2/OLC_Details_updated.dvm > ./output.txt || true
+        cat output.txt
+        cp output.txt /home/runner/work/.
+        
+        # Steps represent a sequence of tasks that will be executed as part of the job
+        # steps:
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Send mail
+      uses: dawidd6/action-send-mail@v2
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: neeelanjana
+        password: mulo1234
+        subject: Github Actions job result
+        # Literal body:
+        body: Build job of ${{github.repository}} completed successfully!!!
+        to: sandipghosh84@gmail.com
+        from: Sarmistha
+        # Optional content type (defaults to text/plain):
+        content_type: text/html
+        # Optional attachments:
+        attachments: /home/runner/work/output.txt
