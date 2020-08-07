@@ -13,14 +13,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: | 
-        echo -1. current path--
-        pwd
+        #echo -1. current path--
+        #pwd
         #echo $GITHUB_REPOSITORY
         #cd /home/runner/work/
         #echo $GITHUB_WORKSPACE
         cd ${{github.workspace}}
         #echo -2. current path--
-        pwd
+        #pwd
         cd sandipghosh84-5-DEV-SFDC-Project/src/pages/
         chmod u=rwx scripts/compareDVMFiles.sh
         ./scripts/compareDVMFiles.sh
