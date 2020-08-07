@@ -1,6 +1,7 @@
 #compare files in two directories
-for file in dir1/*.dvm; do
-	filename = `ls -t1 |  head -n 1`
-	cat filename
-    diff "$file" "dir2/${file##*/}" >> output.txt
+cd dir2
+fn=$(ls -t | head -n1)
+echo $fn
+for file in dir2/*.dvm; do
+        diff "$file" "dir1/${fn##*/}" >> output.txt
 done
