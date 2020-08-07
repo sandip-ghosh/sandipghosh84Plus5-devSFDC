@@ -19,7 +19,8 @@ for fn in dir2/*.dvm; do
                 #if [[ $file = $fn ]]; then
                 if [[ "$filestr1" == "$filestr2" ]]; then
                         echo $fn
-                        diff --context=1 "$file" "dir2/$fn" >> output.txt
+                        #diff --context=1 "$file" "dir2/$fn" >> output.txt
+                        diff --context=1 "$file" "$fn" >> output.txt
                 fi
           done
 done
