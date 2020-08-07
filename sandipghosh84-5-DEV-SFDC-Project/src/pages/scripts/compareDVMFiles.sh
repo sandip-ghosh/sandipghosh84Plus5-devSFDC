@@ -1,12 +1,12 @@
 #compare files in two directories
-echo 1-current directory 
-pwd
-cd dir2
+#echo 1-current directory 
+#pwd
+#cd dir2
 #fn=$(ls -t | head -n1)
 #echo $fn
-cd ..
-echo 2-current directory 
-pwd
+#cd ..
+#echo 2-current directory 
+#pwd
 for fn in dir2/*.dvm; do
         for file in dir1/*.dvm; do
                 #echo $file
