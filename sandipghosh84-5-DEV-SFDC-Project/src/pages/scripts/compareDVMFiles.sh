@@ -1,4 +1,6 @@
 #compare files in two directories
-for file in d1/*.dvm; do
-    diff "$file" "d2/${file##*/}" >> output.txt
+for file in dir2/*.dvm; do
+    diff "$file" "dir1/${file##*/}" >> output.txt
+    cat output.txt
+    cp output.txt /home/runner/work/.
 done
