@@ -20,10 +20,10 @@ for fn in dir2/*.dvm; do
                 if [[ "$filestr1" == "$filestr2" ]]; then
                         echo $fn
                         #diff --context=1 "$file" "dir2/$fn" >> output.txt
-                        if cmp $file $fn >/dev/null 2>&1
-                        then
-                                echo $file and $fn are same
-                        else
+                        if ! cmp $file $fn >/dev/null 2>&1
+                        #then
+                         #       echo $file and $fn are same
+                        #else
                                 diff --context=1 "$file" "$fn" >> output.txt
                         fi
                         
