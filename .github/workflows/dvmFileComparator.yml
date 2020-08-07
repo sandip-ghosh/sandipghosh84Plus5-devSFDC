@@ -1,0 +1,33 @@
+# This is a basic workflow to help you get started with Actions
+name: "build-test"
+on: 
+  [push]
+
+jobs:
+  test_something:
+    runs-on: ubuntu-latest
+    #env:
+    #working-directory: ../../sandipghosh84-5-DEV-SFDC-Project/src/pages/
+    # Runs a single command using the runners shell
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    - uses: actions/checkout@v2
+    - run: | 
+        echo -1. current path--
+        pwd
+        #echo $GITHUB_REPOSITORY
+        #cd /home/runner/work/
+        #echo $GITHUB_WORKSPACE
+        cd ${{github.workspace}}
+        #echo -2. current path--
+        pwd
+        cd sandipghosh84-5-DEV-SFDC-Project/src/pages/
+        chmod u=rwx compareDVMFiles.sh
+        ./scripts/compareDVMFiles.sh
+        #ls -lrt
+        #python --version
+        #git diff --no-index -- helloWorld.page helloWorld_1.page > ./output.txt || true
+        #git diff --no-index -- dir1/OLC_Details.dvm dir2/OLC_Details_updated.dvm > ./output.txt || true
+        #cat output.txt
+        #cp output.txt /home/runner/work/.
+        
