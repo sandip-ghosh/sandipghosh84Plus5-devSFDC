@@ -18,7 +18,6 @@ for fn in dir2/*.dvm; do
                 #if [[ "$file" == "$fn" ]]; then
                 #if [[ $file = $fn ]]; then
                 if [[ "$filestr1" == "$filestr2" ]]; then
-                        echo $fn
                         #diff --context=1 "$file" "dir2/$fn" >> output.txt
                         if ! cmp $file $fn >/dev/null 2>&1
                         then
